@@ -1,0 +1,31 @@
+{
+  "name": "greg-md/php-app-debug-bar",
+  "type": "library",
+  "description": "Integration of PHP Debug Bar in Greg PHP Application.",
+  "keywords": [ "greg-md", "greg-php", "php-app-debug-bar", "greg-app-debug-bar", "app-debug-bar", "debug-bar", "php", "web-artisans" ],
+  "homepage": "https://github.com/greg-md/php-app-debug-bar",
+  "license": "MIT",
+  "authors": [
+    { "name": "Grigorii Duca", "email": "contact@greg.md", "homepage": "http://greg.md/" }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.1",
+    "greg-md/php-app-installer": "dev-master",
+    "maximebf/debugbar": "^1.13.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.2.*",
+    "symfony/var-dumper": "^3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Greg\\AppDebugBar\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Greg\\AppDebugBar\\": "tests/"
+    }
+  }
+}
