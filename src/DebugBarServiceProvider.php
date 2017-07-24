@@ -54,7 +54,7 @@ class DebugBarServiceProvider implements ServiceProvider
     {
         $app->event(new ConfigAddEvent(__DIR__ . '/../config/config.php', self::CONFIG_NAME));
 
-        $resourcesPath = getcwd() . '/vendor/maximebf/debugbar/src/DebugBar/Resources';
+        $resourcesPath = $app->getRootPath() . '/vendor/maximebf/debugbar/src/DebugBar/Resources';
 
         $app->event(new PublicAddEvent($resourcesPath, $this->config('base_url')));
     }
