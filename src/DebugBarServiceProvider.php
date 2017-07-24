@@ -3,7 +3,11 @@
 namespace Greg\AppDebugBar;
 
 use DebugBar\StandardDebugBar;
-use Greg\Framework\Application;
+use Greg\AppInstaller\Application;
+use Greg\AppInstaller\Events\ConfigAddEvent;
+use Greg\AppInstaller\Events\ConfigRemoveEvent;
+use Greg\AppInstaller\Events\PublicAddEvent;
+use Greg\AppInstaller\Events\PublicRemoveEvent;
 use Greg\Framework\Http\HttpKernel;
 use Greg\Framework\ServiceProvider;
 use Greg\Support\Http\Request;
@@ -25,9 +29,9 @@ class DebugBarServiceProvider implements ServiceProvider
         $this->app = $app;
     }
 
-    public function bootHttpKernel()
+    public function bootHttpKernel(Application $app)
     {
-        $this->app()->inject(StandardDebugBar::class, function () {
+        $app->inject(StandardDebugBar::class, function () {
             $debugBar = new StandardDebugBar();
 
             $debugBar->getJavascriptRenderer($this->config('base_url'));
@@ -35,7 +39,7 @@ class DebugBarServiceProvider implements ServiceProvider
             return $debugBar;
         });
 
-        $this->app()->listen(HttpKernel::EVENT_FINISHED, function (Response $response) {
+        $app->listen(HttpKernel::EVENT_FINISHED, function (Response $response) {
             if (!$this->config('disabled') and !Request::isAjax() and $response->isHtml()) {
                 $renderer = $this->debugBar()->getJavascriptRenderer();
 
@@ -46,20 +50,20 @@ class DebugBarServiceProvider implements ServiceProvider
         });
     }
 
-    public function install()
+    public function install(Application $app)
     {
-        $this->app()->fire('app.config.add', __DIR__ . '/../config/config.php', self::CONFIG_NAME);
+        $app->event(new ConfigAddEvent(__DIR__ . '/../config/config.php', self::CONFIG_NAME));
 
         $resourcesPath = getcwd() . '/vendor/maximebf/debugbar/src/DebugBar/Resources';
 
-        $this->app()->fire('app.public.add', $resourcesPath, $this->config('base_url'));
+        $app->event(new PublicAddEvent($resourcesPath, $this->config('base_url')));
     }
 
-    public function uninstall()
+    public function uninstall(Application $app)
     {
-        $this->app()->fire('app.config.remove', self::CONFIG_NAME);
+        $app->event(new ConfigRemoveEvent(self::CONFIG_NAME));
 
-        $this->app()->fire('app.public.remove', $this->config('base_url'));
+        $app->fire(new PublicRemoveEvent($this->config('base_url')));
     }
 
     private function debugBar(): StandardDebugBar
