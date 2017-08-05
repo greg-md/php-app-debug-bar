@@ -63,7 +63,7 @@ class DebugBarServiceProvider implements ServiceProvider
     {
         $app->event(new ConfigRemoveEvent(self::CONFIG_NAME));
 
-        $app->fire(new PublicRemoveEvent($this->config('base_url')));
+        $app->event(new PublicRemoveEvent($this->config('base_url')));
     }
 
     private function debugBar(): StandardDebugBar
