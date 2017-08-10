@@ -15,7 +15,7 @@ use Greg\Support\Http\Response;
 
 class DebugBarServiceProvider implements ServiceProvider
 {
-    private const CONFIG_NAME = 'debugBar';
+    private const CONFIG_NAME = 'debug_bar';
 
     private $app;
 
@@ -40,7 +40,7 @@ class DebugBarServiceProvider implements ServiceProvider
         });
 
         $app->listen(HttpKernel::EVENT_FINISHED, function (Response $response) {
-            if (!$this->config('disabled') and !Request::isAjax() and $response->isHtml()) {
+            if (!Request::isAjax() and $response->isHtml()) {
                 $renderer = $this->debugBar()->getJavascriptRenderer();
 
                 $response->setContent(
