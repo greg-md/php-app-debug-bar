@@ -54,16 +54,16 @@ class DebugBarServiceProvider implements ServiceProvider
     {
         $app->event(new ConfigAddEvent(__DIR__ . '/../config/config.php', self::CONFIG_NAME));
 
-        $resourcesPath = $app->getRootPath() . '/vendor/maximebf/debugbar/src/DebugBar/Resources';
+        $resourcesPath = 'vendor/maximebf/debugbar/src/DebugBar/Resources';
 
         $app->event(new PublicAddEvent($resourcesPath, $this->config('base_url')));
     }
 
     public function uninstall(Application $app)
     {
-        $app->event(new ConfigRemoveEvent(self::CONFIG_NAME));
-
         $app->event(new PublicRemoveEvent($this->config('base_url')));
+
+        $app->event(new ConfigRemoveEvent(self::CONFIG_NAME));
     }
 
     private function debugBar(): StandardDebugBar
