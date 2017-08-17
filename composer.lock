@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/greg-md/php-framework.git",
-                "reference": "a6eefaa290ddd08de2b1ff931a172fa16401fc40"
+                "reference": "c353aed6f6ad9f2ed933ebd3f01c033d16903def"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-md/php-framework/zipball/a6eefaa290ddd08de2b1ff931a172fa16401fc40",
-                "reference": "a6eefaa290ddd08de2b1ff931a172fa16401fc40",
+                "url": "https://api.github.com/repos/greg-md/php-framework/zipball/c353aed6f6ad9f2ed933ebd3f01c033d16903def",
+                "reference": "c353aed6f6ad9f2ed933ebd3f01c033d16903def",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +163,7 @@
                 "php-framework",
                 "web-artisans"
             ],
-            "time": "2017-07-22 20:51:33"
+            "time": "2017-08-17 07:04:12"
         },
         {
             "name": "greg-md/php-router",
@@ -222,19 +222,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/greg-md/php-support.git",
-                "reference": "e2537a61ffd67bf416a58238ac4d201cd08500a4"
+                "reference": "85d8f1e67da1ff1d0591a85dd817692e85a78dda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-md/php-support/zipball/e2537a61ffd67bf416a58238ac4d201cd08500a4",
-                "reference": "e2537a61ffd67bf416a58238ac4d201cd08500a4",
+                "url": "https://api.github.com/repos/greg-md/php-support/zipball/85d8f1e67da1ff1d0591a85dd817692e85a78dda",
+                "reference": "85d8f1e67da1ff1d0591a85dd817692e85a78dda",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.7.*"
+                "phpunit/phpunit": "6.3.*"
             },
             "type": "library",
             "autoload": {
@@ -263,7 +263,7 @@
                 "support",
                 "web-artisans"
             ],
-            "time": "2017-08-13 14:20:37"
+            "time": "2017-08-17 06:59:14"
         },
         {
             "name": "maximebf/debugbar",
@@ -271,12 +271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "3e3dad6f9aa15b892a76d80e75be24970a24d321"
+                "reference": "e23a98f2d65607d8aa6c7b409a513f8fdf4acdde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/3e3dad6f9aa15b892a76d80e75be24970a24d321",
-                "reference": "3e3dad6f9aa15b892a76d80e75be24970a24d321",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/e23a98f2d65607d8aa6c7b409a513f8fdf4acdde",
+                "reference": "e23a98f2d65607d8aa6c7b409a513f8fdf4acdde",
                 "shasum": ""
             },
             "require": {
@@ -324,7 +324,7 @@
                 "debug",
                 "debugbar"
             ],
-            "time": "2017-08-14 08:46:50"
+            "time": "2017-08-17 07:17:00"
         },
         {
             "name": "psr/log",
@@ -379,12 +379,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f5ba4c6753a7260f2fbff5e01d96697eb3a024d8"
+                "reference": "094d1ac303515f276cd3f7c0fc96926064312ae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f5ba4c6753a7260f2fbff5e01d96697eb3a024d8",
-                "reference": "f5ba4c6753a7260f2fbff5e01d96697eb3a024d8",
+                "url": "https://api.github.com/repos/symfony/console/zipball/094d1ac303515f276cd3f7c0fc96926064312ae0",
+                "reference": "094d1ac303515f276cd3f7c0fc96926064312ae0",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +401,6 @@
                 "symfony/config": "~3.3|~4.0",
                 "symfony/dependency-injection": "~3.3|~4.0",
                 "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
-                "symfony/http-kernel": "~2.8|~3.0|~4.0",
                 "symfony/lock": "~3.4|~4.0",
                 "symfony/process": "~3.3|~4.0"
             },
@@ -441,7 +440,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-08-12 08:14:42"
+            "time": "2017-08-15 13:32:22"
         },
         {
             "name": "symfony/debug",
@@ -564,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "c83889ce881bc16a4c23d7f5dd42b51deb0333a2"
+                "reference": "7800f9dfbb04f4ef5f4f2e652297fc03dc2b3591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/c83889ce881bc16a4c23d7f5dd42b51deb0333a2",
-                "reference": "c83889ce881bc16a4c23d7f5dd42b51deb0333a2",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/7800f9dfbb04f4ef5f4f2e652297fc03dc2b3591",
+                "reference": "7800f9dfbb04f4ef5f4f2e652297fc03dc2b3591",
                 "shasum": ""
             },
             "require": {
@@ -625,7 +624,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-08-09 16:38:43"
+            "time": "2017-08-16 16:14:34"
         }
     ],
     "packages-dev": [
