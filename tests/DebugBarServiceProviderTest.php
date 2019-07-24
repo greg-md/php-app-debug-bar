@@ -15,7 +15,7 @@ class DebugBarServiceProviderTest extends TestCase
 {
     private $rootPath = __DIR__ . '/app';
 
-    protected function setUp()
+    protected function setUp(): void
     {
         Dir::make($this->rootPath);
 
@@ -27,7 +27,7 @@ class DebugBarServiceProviderTest extends TestCase
         Dir::make($this->rootPath . '/storage');
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         Dir::unlink($this->rootPath);
     }
@@ -71,7 +71,7 @@ class DebugBarServiceProviderTest extends TestCase
 
         $app->fire(HttpKernel::EVENT_FINISHED, $response = new Response());
 
-        $this->assertContains('var phpdebugbar', $response->getContent());
+        $this->assertStringContainsString('var phpdebugbar', $response->getContent());
     }
 
     public function testCanInstall()
